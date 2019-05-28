@@ -1,0 +1,172 @@
+@stuff__bg_color: lighten(midnightblue, 10%);
+@stuff__button_color: darken(@stuff__bg_color, 10%);
+@stuff__form_color: lighten(@stuff__bg_color, 10%);
+
+@app_width: 100vw;
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: tomato;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.app {
+    margin: 0;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    background-color: tomato;
+    height: 100vh;
+    max-width: 100vw;
+    //min-width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    
+    &__filter, &__face {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        flex-grow: 1;
+        transform: translateX(-100%);
+        min-width: 100%;
+        height: 100vh;
+        transition: transform .5s;
+        overflow: hidden;
+        @media screen and (min-width: 992px) {
+            transform: none;
+        }
+    }
+
+
+    &__filter {
+        background-color: #fff;
+        overflow: scroll;
+        height: 100vh;
+        overflow-x: hidden;
+        background-clip: content-box;
+        box-sizing: border-box;
+        @media screen and (min-width: 992px) {
+            min-width: 10%;
+            max-width: 30%;
+        }
+        @media screen and (min-width: 1200px) {
+            min-width: 220px;
+            width: 20%;
+            max-width: 275px;
+            margin: 5vh 0;
+            margin-left: 5vh;
+            height: auto;
+            max-height: 90vh;
+        }
+    }
+    &__face {
+        @media screen and (min-width: 992px) {
+            min-width: 70%;
+            max-width: 70%;
+            
+        }
+        @media screen and (min-width: 1200px) {
+            min-width: 60%;
+            max-width: 60%;
+            margin: 5vh 10% 5vh;
+            box-sizing: border-box;
+            height: auto;
+            max-height: 90vh;
+        }
+    }
+
+    &__toggle-view:checked ~ &__filter,
+    &__toggle-view:checked ~ &__face,
+    &__toggle-view:checked ~ &__app__CRUD-form {
+        transform: translateX(0);
+    }
+    &__add-button {
+        z-index: 1;
+        background-color: @stuff__bg_color;
+        border-radius: 50%;
+        position: fixed;
+        
+        font-size: 1.5rem;
+        color: white;
+        box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.8),inset 0.5px 0.5px 1px 0 rgba(255, 255, 255, 0.8);
+    }
+    &__add-button {
+        right: 16px;
+        bottom: 16px;
+    }
+    // &__toggle-CRUD-form:checked ~ &__filter,
+    // &__toggle-CRUD-form:checked ~ &__face,
+    // &__toggle-CRUD-form:checked ~ &__app__CRUD-form {
+    //     transform: translateX(-200%;);
+    // }
+}
+
+
+
+.toolbar-menu {
+    // background-color: lighten(#270082, 10%) !important;
+    // position: absolute !important;
+    // z-index: -1;
+    // transition: 0.5s all;
+    &_active {
+        transform: translateY(100%);
+    }
+    &__search {
+        flex-grow: 1;
+        width: 100px;
+        height: 36px;
+        font-size: 1.5rem;
+        border-radius: 4px;
+        border: none;
+        box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.8), 0.5px 0.5px 1px 0 rgba(255, 255, 255, 0.8);
+    }
+    &__submit {
+
+    }
+}
+
+.cards-wrapper {
+    padding-top: 60px;
+    height: 100%;
+    display: flex;
+    flex-wrap:wrap;
+    overflow: scroll;
+    overflow-x: hidden;
+    align-content: flex-start;
+}
+
+.stuff {
+    &_hiden {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .search-icon {
+        display: none;
+    }
+}
+// .app__top-bar {
+//     top: 0px;
+// }
+
+// .toolbar {
+//     &__ &__title {
+//         flex-grow: 1;
+//         text-align: center;
+//         margin-left: 16px;
+//     }
+// }
+
+
+
+@import "../components/top-tool-bar/top-tool-bar.less";
+@import "../components/tumblr/tumblr.less";
+@import "../components/filter-menu/filter-menu";
+@import "../components/cards/cards.less";
+@import "../components/modal/modal.less";
+@import "icons.less";
+@import "material.less";

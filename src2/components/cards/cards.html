@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="cards.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <style>
+    body {
+      min-width: 320px;
+      max-width: 320px;
+      background-color: rgb(0, 162, 255);
+    }
+  </style>
+</head>
+
+<body>
+  <article class="game-card game-card_action">
+    <section class="game-card__main">
+        <section class="game-card__main edit">
+            <section class="game-card__primary ">
+              <div class="game-card__title edit__title"><span calss="edit__name">Name: </span><input class="edit__input"></div>
+              <div class="game-card__subtitle edit__title edit__title_subtitle">
+                <span><b>Cost</b></span> <input class="edit__input edit__input_sub"> <span> <i class="fas fa-ruble-sign"></i></span>
+              </div>
+            </section>
+            <section class="game-card__secondary">
+              <input type="checkbox">
+              <input type="checkbox">
+              <input type="checkbox">
+              <input type="checkbox">
+              <input type="checkbox">
+              <input type="checkbox">
+              <input type="checkbox">
+              <input type="checkbox">
+            </section>
+          </section>
+    </section>
+    <section class="game-card__icons">
+          <div class="game-card__action-icon">
+            
+          </div>
+    </section>
+  </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <article class="game-card game-card_flip">
+    <section class="game-card__cover">
+      <section class="game-card__main">
+        <section class="game-card__primary">
+          <h2 class="game-card__title">Game name</h2>
+          <h3 class="game-card__subtitle">
+            <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star-half-alt"></i><i class="far fa-star"></i></span>
+            <span><b>2000</b> <i class="fas fa-ruble-sign"></i></span>
+          </h3>
+        </section>
+        <section class="game-card__secondary">
+          <i class="fab fa-windows"></i>
+          <i class="fab fa-steam"></i>
+          <i class="fab fa-xbox"></i>
+          <i class="fab fa-linux"></i>
+          <i class="fab fa-apple"></i>
+          <i class="fab fa-playstation"></i>
+          <i class="fab fa-nintendo-switch"></i>
+        </section>
+      </section>
+      <section class="game-card__image">
+      </section>
+    </section>
+    <section class="game-card__inside">   
+            <section class="game-card__main">
+              <section class="game-card__primary">
+                <h2 class="game-card__title">Allmasdadwdawdawdasdwdasdwadsdw</h2>
+              </section>
+              <section class="game-card__actions">
+                <button class="action-button action-button_right-marg">
+                  Buy
+                </button>
+                <button class="action-button action-button_left-marg">
+                  Vote
+                </button>
+              </section>
+            </section>
+            <section class="game-card__icons">
+              <div class="game-card__action-icon">
+                
+              </div>
+            </section>
+      <!-- <section class="game-card-action__row">
+        <section class="game-card-action__content">
+            <section class="game-card__main">
+              <section class="game-card__primary">
+                <h2 class="game-card__title">Allmasdadwdawdawdasdwdasdwadsdw</h2>
+              </section>
+              <section class="game-card__actions">
+                <button class="action-button action-button_right-marg">
+                  Buy
+                </button>
+                <button class="action-button action-button_left-marg">
+                  Vote
+                </button>
+              </section>
+            </section>
+            <section class="game-card__icons">
+              <div class="game-card__action-icon">
+                
+              </div>
+            </section>
+            </section>
+      </section> -->
+    </section>
+    </section>
+  </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="templatforms">
+    <i class="fab fa-windows"></i>
+    <i class="fab fa-steam"></i>
+    <i class="fab fa-xbox"></i>
+    <i class="fab fa-linux"></i>
+    <i class="fab fa-apple"></i>
+    <i class="fab fa-playstation"></i>
+    <i class="fab fa-nintendo-switch"></i>
+  </div>
+  <section id='card-wrapper'>
+
+  </section>
+  <section class="modal_hiden" id="modal-wrapper"></section>
+  <script type="module">
+    import {GameCardsEngine} from './cards.js';
+    import {ModalsEngine} from '../modal/modal.js';
+      let modalHeap = new ModalsEngine(document.querySelector('#modal-wrapper'));
+
+      let gamesPool = [{
+          id: 1,
+          title: 'Dota 2',
+          rating: '5',
+          price: '2000',
+          platform: ["windows","apple","playstation","nintendo-switch"]
+      },{
+          id: 2,
+          title: 'Heroes of Might and Magic 2',
+          rating: '9',
+          price: '500',
+          platform: ["windows","steam","xbox","linux","apple","playstation","nintendo-switch"]
+      },{
+          id: 3,
+          title: 'Dota 2',
+          rating: '8.4',
+          price: '2000',
+          platform: ["steam","xbox","linux","apple","playstation","nintendo-switch"]
+      },{
+          id: 4,
+          title: 'Dota 2',
+          rating: '8.5',
+          price: '2000',
+          platform: ["windows","steam","xbox","linux","apple","playstation","nintendo-switch"]
+      }];
+
+      // console.log(JSON.parse(gamesPool[0].platforms));
+      let board = document.querySelector('#card-wrapper');
+      let cardsBoard = new  GameCardsEngine(board ,gamesPool, modalHeap);
+  </script>
+</body>
+
+</html>

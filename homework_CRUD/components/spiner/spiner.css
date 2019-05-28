@@ -1,0 +1,58 @@
+@keyframes spinFace {
+  to {
+    transform: rotate(-1800deg);
+  }
+}
+@keyframes spinSide {
+  from {
+    transform: scale(1.8);
+    border-width: 3.47222222px;
+  }
+  to {
+    transform: scale(1.8) rotate(900deg);
+    border-width: 3.47222222px;
+  }
+}
+@keyframes spin {
+  from {
+    transform: scale(1.5);
+    border-width: 4.16666667px;
+  }
+  to {
+    transform: scale(1.5) rotate(900deg);
+    border-width: 4.16666667px;
+  }
+}
+.spiner {
+  position: relative;
+  margin: 50px;
+  width: 37.5px;
+  height: 37.5px;
+  border: 3.125px solid transparent;
+  outline: 3.125px solid purple;
+  border-radius: 50%;
+  transform: rotate(45deg);
+}
+.spiner::after,
+.spiner::before {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 6.25px solid #ef5455;
+  border-radius: 50%;
+  animation: 4000ms linear infinite;
+  transform-origin: center;
+  content: "";
+}
+.spiner::after {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  animation-name: spinFace;
+}
+.spiner::before {
+  top: 3.125px;
+  left: 3.125px;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  animation-name: spinSide;
+}

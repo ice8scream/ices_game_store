@@ -1,0 +1,145 @@
+body {
+    /* width: 1600px;
+    height: 800px; */
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+body * {
+    transition: all 500ms;
+}
+
+.card {
+    margin: 2%;
+    position: relative;
+    display: flex;
+    width: 100vw;
+    height: 37.5vw;
+    background: #000F14 no-repeat -75% 0;
+    /* background-image: url(../../Endless-Constellation.svg); */
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 5%/13.3%;
+}
+
+.card:hover {
+    box-shadow: 0px 0px 10px 2px rgb(255, 47, 47);
+}
+
+.card > svg{
+    position: absolute;
+}
+
+.icon-svg {
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10%; 
+}
+
+.card:hover .cover-svg {
+    opacity: 0;
+}
+
+.card-content {
+    height: 100%;   
+    flex-grow: 1;
+}
+
+
+
+.card:hover .card-content{
+    display: block;
+    /* background: cornflowerblue; */
+}
+
+.card-header {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 50%/ 13.3%;
+    width: 10%;
+    background: rgb(50, 47, 255);
+    left: -10%; /*rgb(50, 47, 255); */
+    padding: 1%;
+}
+
+.card:hover .card-header{
+    transform: translate(100%);
+}
+
+.card-content {
+    height: 100%;
+    flex-grow: 1;
+}
+
+.card-footer {
+    width: 50%;
+    transition: all 1000ms;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-footer * {
+    /* visibility: hidden;  */
+    width: 90%;
+    transition: all 500ms;
+    
+}
+
+.card-footer-top {
+    position: relative;
+    height: 60%;
+    top: -60%; 
+    border-radius: 12.5%/25%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background: rgb(255, 47, 47);
+}
+
+.card-footer-bottom {
+    position: relative;
+    height: 30%;
+    bottom: -30%;
+    border-radius: 12.5%/50% ;
+    background: rgb(50, 255, 47);
+}
+
+.card:hover .card-footer-top {
+    visibility: visible;
+    transform: translate(0, 100%);
+    transition-delay: 500ms;
+}
+
+.card:hover .card-footer-bottom {
+    visibility: visible;
+    transform: translate(0, -100%);
+    transition-delay: 500ms;
+}
+
+.card-title {
+    width: 100%;
+    
+    background: rgb(255, 47, 47);;/*  url(../../Endless-Constellation.svg);*/
+    border-radius: 50%/15%;
+    flex-grow: 1;
+}
+/* .card-footer {
+    visibility: hidden;
+    width: 40%;
+    background: rgb(255, 47, 47);
+    transform: translate(0, 100%);
+    transition: all 1000ms;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 20px;
+} */
+
+/*.card:hover .card-footer{
+    visibility: visible;
+    transform: translate(0);
+    transition: all 1000ms;
+}*/

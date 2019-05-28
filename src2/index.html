@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <title>my Web-store</title>
+</head>
+
+<body>
+  <section class="app">
+  <input type="checkbox" id="app__toggle-view" class="app__toggle-view" hidden>
+  <input type="checkbox" id="app__toggle-CRUD-form" class="app__toggle-CRUD-form" hidden>
+  <aside class="app__filter">
+    <header class="top-tool-bar__row mdc-elevation--z8">
+      <form class="top-tool-bar__section top-tool-bar__section_align-start" id="filter-menu-form">
+        <label for="app__toggle-view">
+          <div class="icon" aria-label="Bookmark this page">
+            <i class="material-icons">close</i>
+          </div>
+        </label>
+          
+          <input type="search" name="search-req" class="toolbar-menu__search">
+          
+          
+          <button class="icon toolbar-menu__submit" aria-label="Bookmark this page"><i class="material-icons">
+            search
+            </i></button>
+
+      </form>
+    </header>
+    <ul class="filter-menu" id="filter-menu"></ul>
+  </aside>
+  <main class="app__face">
+    <!-- <div class="grid-helper"></div>
+    <script src="js/temp-grid.js"></script> -->
+    <header class="top-tool-bar mdc-elevation--z8">
+      <section class="top-tool-bar__row mdc-elevation--z1">
+        <section class="top-tool-bar__section top-tool-bar__section_align-start top-tool-bar__section_grow">
+
+          <span class="top-tool-bar__title">User</span>
+        </section>
+        <section class="top-tool-bar__section top-tool-bar__section_align-end top-tool-bar__section_shrink">
+          <button class="icon app__update-button" aria-label="Bookmark this page"><i class="material-icons">update</i></button>
+          <label class="tumblr">
+            <span class="tumblr__title">Admin</span>
+            <span class="tumblr__icon"><i class="fas fa-user-cog"></i></span>
+            <div class="tumblr__box">
+              <input id="admin-tumblr" class="tumblr_checkbox" type="checkbox">
+              <div class="tumblr_bar"></div>
+              <div class="tumblr_ball"></div>
+            </div>
+          </label>
+          <label class="tumblr">
+            <span class="tumblr__title">Filter</span>
+            <span class="tumblr__icon"><i class="fas fa-filter"></i></span>
+            <div class="tumblr__box">
+              <input id="filter-tumblr" class="tumblr_checkbox" type="checkbox">
+              <div class="tumblr_bar"></div>
+              <div class="tumblr_ball"></div>
+            </div>
+          </label>
+          <label for="app__toggle-view" class="search-icon">
+            <div class="icon" aria-label="Bookmark this page"> <i class="material-icons">search</i></div>
+          </label>
+        </section>
+      </section>
+      <!-- <section class="top-tool-bar__row">
+        <section class="top-tool-bar__section">
+          
+          <div class="icon"></div>
+          
+          <input type="search" class="toolbar-menu__search">
+          <button class="icon toolbar-menu__submit" aria-label="Bookmark this page"><i class="material-icons">
+              arrow_forward
+            </i></button>
+        </section>
+      </section> -->
+    </header>
+    <label class="app__add-button stuff_hiden" >
+      <div class="icon">
+        <i class="material-icons">add</i>
+      </div>
+    </label>
+    
+    <section id="cards-wrapper" class="cards-wrapper">
+    </section>
+    
+  </main>
+  <aside class="modal-wrapper modal_hidden" id="modal-wrapper"></aside>
+</section>
+  <script src="js/script.js" type="module"></script>
+</body>
+
+
+</html>

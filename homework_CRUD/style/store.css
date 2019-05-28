@@ -1,0 +1,65 @@
+/* card
+title
+price
+raiting
+votes
+Platforms */
+body {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  margin: 0;
+}
+.card-wrapper {
+  background-color: royalblue;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 5vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  height: 100vh;
+  overflow: scroll;
+  box-shadow: 0 2px 5px 0 black;
+}
+.card-wrapper::-webkit-scrollbar {
+  width: 0;
+}
+.card {
+  width: 500px;
+  height: 125px;
+  border: 0px solid;
+  background-color: yellowgreen;
+  border-color: #5c7b1e;
+  color: #1e7b3d;
+  display: flex;
+  flex-wrap: wrap;
+  border-width: 5px;
+  margin-top: 12.5px;
+  margin-bottom: 12.5px;
+  box-shadow: 0 2px 5px 0 black;
+}
+.card .card-line {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+.card .card-line section {
+  width: 245px;
+  height: 36.66666667px;
+  border: 2.5px solid;
+  background-color: #ef5455;
+  border-color: #2b3252;
+  color: #fad744;
+  flex-basis: 10ch;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+  text-shadow: 2px 2px 5px black;
+}

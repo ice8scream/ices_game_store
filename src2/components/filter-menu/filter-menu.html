@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="filter-menu.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <style>
+        body {
+            min-width: 320px;
+            max-width: 320px;
+            position: absolute;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <form id="form-temp" action=""> <input type="submit"> </form>
+<ul class="filter-menu" id="filter-menu-static">
+    <li class="filter-param">
+        <div class="filter-param__header">
+            <div class="filter-param__icon filter-param__icon_active">►</div>
+            <div class="filter-param__title">Цена</div>
+            <label class="filter-param__mode"> 
+                    <input class="filter-param__order" type="checkbox">
+                    <span></span>
+                    <div class="filter-param__icon"><i class="fas fa-arrow-circle-up"></i></div>
+                   
+            </label>
+            
+        </div>
+        <div class="filter-param__body filter-param__body_show">
+            <div class="filter-custom">
+              
+                
+            </div>
+            <ul class="filter-change">
+                    <li class="filter-change__part filter-change__part_select">
+                            <select name="platforms" id="" multiple style="display: none">
+                                <option value="lol">1</option>
+                                <option value="lol">2</option>
+                                <option value="lol">3</option>
+                                <option value="lol">4</option>
+                            </select>
+                    </li>
+                    <li>
+                            <label class="filter-change__handler">
+                                    <input class="filter-change__checkbox" type="checkbox" name="cost" data-from="***" data-to="***">
+                                <p class="filter-change__range">all </p>
+                            </label>
+                        </li>
+                <li class="filter-change__part">
+                    <label class="filter-change__handler">
+                        <input class="filter-change__checkbox" type="checkbox" name="cost" data-from="***" data-to="***">
+                        <p class="filter-change__range">от 0 - 1000 </p>
+                    </label>
+                </li>
+                
+            </ul>
+        </div>
+    </li>
+    <li class="filter-param">
+        <label class="filter-param__header">
+            <div class="filter-param__icon">►</div>
+            <div class="filter-param__title">Рейтинг</div>
+        </label>
+        <div class="filter-param__body">
+            <div class="filter-custom">
+                <input class="filter-custom__from" type="text" name="from" id="" placeholder="от"> 
+                <input class="filter-custom__to" type="text" name="to" id="" placeholder="до">
+            </div>
+            <div class="filter-radio" style="display: flex; justify-content: space-around">
+            <ul class="filter-change filter-radio_from">
+                <li class="filter-change__part">
+                    <label class="filter-change__handler">
+                        <input class="filter-change__radio" type="radio" name="raiting-radio-from" data-from="***" data-to="***">
+                        <p class="filter-change__range">1000 </p>
+                    </label>
+                </li>
+                
+            </ul>
+            <ul class="filter-change">
+                <li class="filter-change__part">
+                    <label class="filter-change__handler">
+                        <input class="filter-change__radio" type="radio" name="raiting-radio-to" data-from="***" data-to="***">
+                        <p class="filter-change__range">2000 </p>
+                    </label>
+                </li>
+                
+            </ul>
+        </div>
+        </div>
+    </li>
+</ul>
+
+<ul class="filter-menu" id="filter-menu"></ul>
+
+<script type="module">
+    import {FilterMenu} from "./filter-menu.js";
+    let filterList = [{
+        name: 'Price',
+        formProperty: 'price',
+        type: 'range', // range/select
+        options: ['0', '500', '1000', '1500', '2000', '3000', 'Infinity']
+    },
+    {
+        name: 'Rating',
+        formProperty: 'rating',
+        type: 'range', // range/select
+        options: [ '0', '1', '2', '3', '4', '5']
+    },
+    {
+        name: 'Platform',
+        formProperty: 'platform',
+        type: 'select', // range/select
+        options: ['all', "windows","steam", "linux", "playstation", "xbox", "apple", "nintendo-switch"]
+    }
+];
+
+let temp = new FilterMenu('filter-menu', filterList, 'form-temp');
+
+
+let myForm = document.querySelector('#form-temp');
+myForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    let formFilterData = new FormData(myForm);
+    for (const pair of formFilterData.entries()) {
+        console.log(pair[0] + ', ' + pair[1]);
+    }
+    //console.log(formFilterData.entries());
+});
+</script>
+</body>
+</html>

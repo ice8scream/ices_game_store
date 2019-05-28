@@ -1,0 +1,126 @@
+// @keyframes spinFace {
+//     to {
+//         transform: scale(2) rotate(90deg);
+
+//         border-top-color: @sideColor;
+//         border-bottom-color: @sideColor;
+//     }
+// }
+
+// @keyframes spinSide {
+//     to {
+
+//         border-width: @borderSise;
+//         transform: scale(1) rotate(90deg);
+//         border-left-color: @faceColor;
+//         border-right-color: @faceColor;
+//     }
+// }
+
+@keyframes spinFace {
+    to {
+        transform:rotate(-1800deg);
+    }
+}
+
+@keyframes spinSide {
+    from {
+        transform: scale(1.8);
+     
+        border-width: @borderSise / 1.8;
+    }
+
+    50% {
+    }
+
+    to {
+        transform: scale(1.8) rotate(900deg);
+       
+        border-width: @borderSise / 1.8;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: scale(1.5);
+        
+        border-width: @borderSise / 1.5;
+    }
+
+    to {
+        transform: scale(1.5) rotate(900deg);
+      
+        border-width: @borderSise / 1.5;
+    }
+}
+
+// body {
+//     width: 720px;
+//     height: 360px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+@spinerSize: 25px;
+@sideColor: purple;
+@faceColor: #ef5455;
+@borderSise: @spinerSize / 4;
+@animationTiming: 2000ms;
+
+// .spiner-face {
+//     position: absolute;
+//     width: @spinerSize;
+//     height: @spinerSize;
+//     border: @borderSise solid @faceColor;
+//     border-left-color: transparent;
+//     border-right-color: transparent;
+//     border-radius: 50%;
+//     animation: spinFace 1s linear infinite;
+// }
+
+.spiner {
+    position: relative;
+    margin: 50px;
+    width: @spinerSize + @borderSise * 2;
+    height: @spinerSize + @borderSise * 2;
+    
+    border: @borderSise / 2 solid transparent;
+    outline: @borderSise / 2 solid @sideColor;
+    border-radius: 50%;
+    transform: rotate(45deg);
+ 
+
+    //animation: spin @animationTiming * 2 ease-in-out infinite;
+
+    &::after,
+    &::before {
+        position: absolute;
+        width: @spinerSize;
+        height: @spinerSize;
+        border: @borderSise solid @faceColor;
+        border-radius: 50%;
+        animation: @animationTiming * 2 linear infinite;
+        transform-origin: center;
+        content: "";
+        
+    }
+
+    &::after {
+        
+        border-left-color: transparent;
+        border-right-color: transparent;
+        
+        animation-name: spinFace;
+    }
+
+    &::before {
+        top: @borderSise / 2;
+        left: @borderSise / 2;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        animation-name: spinSide;
+        // animation-fill-mode:  backwards;
+    }
+
+}

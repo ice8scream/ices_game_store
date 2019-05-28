@@ -1,0 +1,90 @@
+/* card
+title
+price
+raiting
+votes
+Platforms */
+
+@baseColor: yellowgreen;
+@cellColor: royalblue;
+@bordColor: #2b3252;
+@textColor: #fad744;
+@bgColor: #ef5455;
+@cardWidth: 500px;
+@cardHeight: @cardWidth / 4;
+@bordWidth: 5px;
+@fontSize: 20px;
+
+body {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    margin: 0;
+}
+
+.card-wrapper {
+    background-color: @cellColor;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 5vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh; 
+    height: 100vh;
+    overflow: scroll;
+    box-shadow: 0 2px 5px 0 black;
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+}
+
+.sizes(@wid; @heig; @bord: 0px) {
+ 
+    width: @wid - @bord * 2;
+    height: @heig - @bord * 2;
+    border: @bord solid;
+}
+
+.colorify(@bg: @baseColor; @bc: darken(@baseColor,20%); @tc: darken(spin(@baseColor,60),20%)) {
+    background-color: @bg;
+    border-color: @bc;
+    color: @tc;
+}
+
+.textSize(@size: 20px) {
+    font-size: @size;
+}
+
+.card {
+    .sizes(@cardWidth; @cardHeight);
+    .colorify(@baseColor);
+    display: flex;
+    flex-wrap: wrap;
+    border-width: @bordWidth;
+    margin-top: @cardHeight / 10;
+    margin-bottom: @cardHeight / 10;
+    box-shadow: 0 2px 5px 0 black;
+    & .card-line {
+        display: flex;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        & section {
+            .sizes(@cardWidth / 2; @cardHeight / 3; @bordWidth / 2);
+            .colorify(@bgColor; @bordColor; @textColor; );
+            flex-basis: 10ch;
+            flex-grow: 1;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            .textSize(@fontSize);
+            text-shadow: 2px 2px 5px black;
+        }
+    }
+   
+}
+

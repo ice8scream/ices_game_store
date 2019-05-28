@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="CRUDForm.css">
+</head>
+
+<body>
+    <section class="form-wrapper">
+    <nav class="choose-form">
+        <ul>
+            <li>
+                <label><input type="radio" name="choose-radio" value="Add" id="" checked>
+                    <p>Add</p>
+                </label>
+            </li>
+            <li>
+                <label><input type="radio" name="choose-radio" value="Edit" id="">
+                    <p>Edit</p>
+                </label>
+            </li>
+            <li>
+                <label><input type="radio" name="choose-radio" value="Delete" id="">
+                    <p>Delete</p>
+                </label>
+            </li>
+            <li>
+                <label><input type="radio" name="choose-radio" value="Vote" id="">
+                    <p>Vote</p>
+                </label>
+            </li>
+        </ul>
+    </nav>
+    <form action="" method="" class="CRUD-form">
+        <input class="none-display" type="text" name="id" placeholder="id" autocomplete="off" disabled>
+        <input class="form-property-top" type="text" name="title" placeholder="title" autocomplete="off">
+        <input class="" type="text" name="platform" placeholder="platform" autocomplete="off">
+        <input class="form-property-bottom" type="text" name="price" placeholder="price" autocomplete="off">
+        <input class="none-display" type="text" name="rating" placeholder="rating" autocomplete="off" disabled>
+        <input type="submit">
+    </form>
+    <script src="CRUDForm.js"></script>
+</body>
+
+</html>

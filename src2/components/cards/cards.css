@@ -1,0 +1,321 @@
+.game-card {
+  position: relative;
+  width: 335px;
+  height: 120px;
+  margin: 8px;
+  flex: 1 1 auto;
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  perspective: 1000px;
+}
+.game-card_action {
+  border-radius: 4px;
+  color: white;
+  background-color: #464646;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+}
+.game-card_flip .game-card__cover {
+  transform: rotatex(180deg);
+}
+.game-card_flip .game-card__inside {
+  transform: rotatex(360deg);
+}
+.game-card__cover,
+.game-card__inside {
+  width: 100%;
+  height: 120px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  backface-visibility: hidden;
+  transition: 0.5s;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+}
+.game-card__cover {
+  background-color: #fff;
+}
+.game-card__inside {
+  transform: rotatex(180deg);
+  color: white;
+  background-color: #464646;
+}
+.game-card__main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.game-card__primary {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.game-card__secondary {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 1rem 8px;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: .875rem;
+  letter-spacing: .0178571429em;
+  line-height: 1.25rem;
+  font-weight: 400;
+}
+.game-card__title {
+  width: 100%;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: .0125em;
+  line-height: 2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.game-card__subtitle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: .875rem;
+  line-height: 1.375rem;
+  font-weight: 700;
+  letter-spacing: .0071428571em;
+}
+.game-card__actions {
+  padding: 8px 8px;
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  box-sizing: border-box;
+}
+.game-card__icons {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.game-card__image {
+  box-shadow: inset 13px 0 5px -10px rgba(0, 0, 0, 0.7);
+  min-width: 120px;
+  height: 120px;
+  padding: 8px 16px;
+  min-height: 52px;
+  display: flex;
+  box-sizing: border-box;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), #000000), url(../img/Dota2-Filled.svg), linear-gradient(black, black);
+  background-size: auto ,80%, auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.game-card__platform-icon {
+  margin: 0 4px;
+  font-size: 1.2rem;
+}
+.game-card__action-icon {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+.edit__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.edit__title_subtitle {
+  color: white;
+  justify-content: flex-start;
+}
+.edit__input {
+  background-color: inherit;
+  border: 2px solid white;
+  color: white;
+  padding: 0 4px;
+  height: 24px;
+  font-size: 1rem;
+  border-radius: 4px;
+  margin-left: 8px;
+  flex: 1 1 auto;
+  width: 10px;
+  outline: none;
+}
+.edit__input_sub {
+  flex: 0 1 auto;
+  height: 20px;
+  width: 48px;
+  margin: 0 4px;
+}
+.action-button {
+  flex: 1 1 auto;
+  background-color: crimson;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  padding: 0 8px;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: center;
+  font-size: .875rem;
+  font-weight: 700;
+  letter-spacing: .0892857143em;
+  min-width: 64px;
+  height: 36px;
+  overflow: hidden;
+  text-transform: uppercase;
+  flex-wrap: nowrap;
+  color: rgba(255, 255, 255, 0.9);
+}
+.action-button i::after {
+  content: " ";
+  white-space: pre;
+}
+.action-button_left {
+  margin-right: 8px;
+}
+.action-button_right {
+  margin-left: 8px;
+}
+#modal-wrapper {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#modal-wrapper.modal_hiden {
+  display: none;
+}
+.modal {
+  position: absolute;
+  display: flex;
+  width: 300px;
+  height: 120px;
+  flex: 1 1 auto;
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  background-color: rebeccapurple;
+  border-radius: 4px;
+}
+.modal__main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.modal__primary {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.modal__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: .0125em;
+  line-height: 2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: white;
+}
+.modal__title_subtitle {
+  color: white;
+  justify-content: flex-start;
+  white-space: normal;
+}
+.modal__input {
+  background-color: inherit;
+  border: 2px solid white;
+  color: white;
+  padding: 0 4px;
+  height: 24px;
+  font-size: 1rem;
+  border-radius: 4px;
+  margin-left: 8px;
+  flex: 1 1 auto;
+  width: 10px;
+  outline: none;
+}
+.modal__input::placeholder {
+  color: white;
+  opacity: 0.5;
+}
+.modal__input_sub {
+  flex: 0 1 auto;
+  height: 20px;
+  width: 48px;
+  margin: 0 4px;
+}
+.modal__secondary {
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 1rem 8px;
+  line-height: 1.25rem;
+  font-weight: 400;
+  background-clip: content-box;
+}
+.modal .platform-checker {
+  display: none;
+}
+.modal .platform-checker ~ i::before {
+  border-radius: 50%;
+  padding: 5px;
+}
+.modal .platform-checker:checked ~ i::before {
+  color: black;
+  background-color: #fff;
+}
+.modal__icons {
+  padding: 16px;
+  padding-left: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.modal__action-icon {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+.platform-cheker {
+  display: none;
+}

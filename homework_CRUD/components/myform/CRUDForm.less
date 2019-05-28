@@ -1,0 +1,97 @@
+
+
+@formWidth: 500px;
+/*body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25vh;
+}*/
+
+@textColor: #2b3252;
+@pasiveColor: #fad744;
+@activeColor: #ef5455;
+@navWidth: 75px;
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav.choose-form {
+    width: @formWidth - 100;
+}
+
+nav.choose-form ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    & input {
+        display: none;
+    }
+    & p {
+        width: @navWidth;
+        height: @navWidth / 3;
+        background-color: @pasiveColor;
+        border: 3px solid @textColor;
+        color: @textColor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+        border-radius: 5px;
+    }
+    & input:checked ~ p {
+        font-weight: bold;
+        background-color: @activeColor;
+        
+    }
+}
+
+.CRUD-form {
+    display: flex;
+    flex-direction: column;
+    width: @formWidth;
+    align-items: center;
+    & input {
+        height: @formWidth / 20;
+        font-size: @formWidth / 20;
+        padding: 0 @formWidth / 20;
+        border-width: 3px;
+        border-color: @textColor;
+        background-color: @pasiveColor;
+        &[type="submit"] {
+            height: @formWidth / 20 * 1.5;
+            width: @formWidth/3;
+            background-color: @activeColor;
+            margin-top: 30px;
+            border-radius: 50px;
+            padding: 0;
+            text-align: center;
+            vertical-align: middle;
+        }
+        &.form-property- {
+            &top{
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+            }
+            &bottom{
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+        }
+        &:not(.form-property-bottom):not([type="submit"]){
+            border-bottom-width: 0;
+        }
+    }
+}
+
+
+
+
+
+.none-display {
+    display: none;
+}
